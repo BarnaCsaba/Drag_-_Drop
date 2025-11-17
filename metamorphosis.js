@@ -27,7 +27,7 @@ function initElements() {
     ui.cards = document.querySelectorAll(".card");
     ui.slots = document.querySelectorAll(".card-slot");
     ui.mixedCardsContainer = document.querySelector(".mixed-cards");
-
+    
     ui.cards.forEach(function (card) {
         card.setAttribute("draggable", true);
     });
@@ -80,6 +80,10 @@ function handleDragOver(e) {
 
 function handleDragEnter(e) {
     console.log("Drag enter of", e.currentTarget);
+
+    ui.slots.forEach(function (slot) {
+            slot.classList.add("active")
+    })
 }
 
 function handleDragLeave(e) {
